@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartMoney — Private Personal Finance Tracker for iOS</title>
+<meta name="description" content="SmartMoney is a private, offline personal finance tracker for iOS. Track spending, budgets, bills, and net worth — no accounts, no ads, no data collection.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+    --bg: #ffffff;
+    --card-bg: #f5f5f7;
+    --border: #e5e5ea;
+    --accent: #0a84ff;
+    --accent-soft: rgba(10, 132, 255, 0.1);
+    --badge-green: #1f8a3d;
+    --badge-green-bg: rgba(52, 199, 89, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f2f2f7;
+      --muted: #9b9ba1;
+      --bg: #000000;
+      --card-bg: #1c1c1e;
+      --border: #2c2c2e;
+      --accent: #409cff;
+      --accent-soft: rgba(64, 156, 255, 0.15);
+      --badge-green: #34c759;
+      --badge-green-bg: rgba(52, 199, 89, 0.15);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 24px 96px;
+    color: var(--text);
+    background: var(--bg);
+  }
+  nav.crumbs {
+    display: flex;
+    gap: 18px;
+    padding: 14px 0 24px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  nav.crumbs a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav.crumbs a.active {
+    color: var(--accent);
+  }
+  .hero {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  .hero .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 40px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  .hero p.tagline {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--text);
+    color: var(--bg);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .cta-badge.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .privacy-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--badge-green-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 40px 0;
+  }
+  .privacy-strip .dot {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--badge-green);
+  }
+  .privacy-strip p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .privacy-strip strong {
+    color: var(--badge-green);
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin: 48px 0;
+  }
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .feature-card h3 {
+    font-size: 15px;
+    margin: 0 0 8px;
+  }
+  .feature-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+  section.screens {
+    margin: 56px 0;
+  }
+  section.screens h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .screens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
+  }
+  .screens-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+  .screens-grid figure {
+    margin: 0;
+  }
+  .screens-grid figcaption {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a {
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav class="crumbs" aria-label="Site navigation">
+  <a href="marketing.html" class="active">About</a>
+  <a href="./">Privacy Policy</a>
+  <a href="support.html">Support</a>
+</nav>
+
+<div class="hero">
+  <p class="eyebrow">Personal Finance, Reimagined</p>
+  <h1>SmartMoney</h1>
+  <p class="tagline">Track. Save. Thrive. A private, offline personal finance tracker for iOS — no accounts, no ads, no data collection.</p>
+  <div class="cta-row">
+    <!-- Replace this href with the live App Store product page URL once SmartMoney is published. -->
+    <a class="cta-badge" href="#" aria-disabled="true">Coming soon on the App Store</a>
+    <a class="cta-badge secondary" href="support.html">Get Support</a>
+  </div>
+</div>
+
+<div class="privacy-strip">
+  <span class="dot"></span>
+  <p><strong>Private by design:</strong> SmartMoney runs entirely on your device. No network access, no analytics, no ads, no account required. Read the full <a href="./">Privacy Policy</a>.</p>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <h3>Track everything</h3>
+    <p>Log transactions manually or import a CSV from your bank. Attach a receipt photo to any transaction.</p>
+  </div>
+  <div class="feature-card">
+    <h3>See where it goes</h3>
+    <p>A monthly spending breakdown by category, with top merchants and month-over-month comparisons.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Budget with confidence</h3>
+    <p>Set monthly budgets per category and track what's left to spend, right from your Home Screen widget.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Never miss a bill</h3>
+    <p>SmartMoney detects recurring charges automatically and keeps a calendar of upcoming bills.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Know your net worth</h3>
+    <p>Track every account — checking, savings, credit cards, investments, even cash — and watch it trend over time.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Works with Siri</h3>
+    <p>Log an expense hands-free: "Hey Siri, log an expense in SmartMoney."</p>
+  </div>
+</div>
+
+<section class="screens">
+  <h2>See it in action</h2>
+  <div class="screens-grid">
+    <figure>
+      <img src="assets/screenshots/dashboard.jpg" alt="SmartMoney Dashboard screen showing net worth, budget progress, and upcoming bills" loading="lazy">
+      <figcaption>Dashboard</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/screenshots/transactions.jpg" alt="SmartMoney Transactions screen with a day-grouped transaction list" loading="lazy">
+      <figcaption>Transactions</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/screenshots/spending.jpg" alt="SmartMoney Spending screen with a category breakdown donut chart" loading="lazy">
+      <figcaption>Spending</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/screenshots/budgets.jpg" alt="SmartMoney Budgets screen showing left-to-spend progress by category" loading="lazy">
+      <figcaption>Budgets</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/screenshots/networth.jpg" alt="SmartMoney Net Worth screen with a trend chart and account list" loading="lazy">
+      <figcaption>Net Worth</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <p>SmartMoney for iOS · <a href="./">Privacy Policy</a> · <a href="support.html">Support</a></p>
+</footer>
+
+</body>
+</html>
