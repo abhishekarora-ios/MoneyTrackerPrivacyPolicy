@@ -1,31 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — SmartMoney</title>
-  <style type="text/css">
-    body {background-color: #000000}
-    p.p2 {margin: 0.0px 0.0px 40.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #5b5b60; -webkit-text-stroke: #5b5b60}
-    p.p3 {margin: 0.0px 0.0px 16.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Helvetica Neue'; text-decoration: underline ; font-kerning: none; color: #106bff; -webkit-text-stroke: 0px #106bff}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — SmartMoney</title>
+<meta name="description" content="Privacy Policy for the SmartMoney iOS app.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+    --bg: #ffffff;
+    --card-bg: #f5f5f7;
+    --border: #e5e5ea;
+    --accent: #0a84ff;
+    --accent-soft: rgba(10, 132, 255, 0.1);
+    --badge-green: #1f8a3d;
+    --badge-green-bg: rgba(52, 199, 89, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f2f2f7;
+      --muted: #9b9ba1;
+      --bg: #000000;
+      --card-bg: #1c1c1e;
+      --border: #2c2c2e;
+      --accent: #409cff;
+      --accent-soft: rgba(64, 156, 255, 0.15);
+      --badge-green: #34c759;
+      --badge-green-bg: rgba(52, 199, 89, 0.15);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+    color: var(--text);
+    background: var(--bg);
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+  }
+  .summary-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--badge-green-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 28px 0 40px;
+  }
+  .summary-card .dot {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--badge-green);
+    margin-top: 6px;
+  }
+  .summary-card p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .summary-card strong {
+    color: var(--badge-green);
+  }
+  nav.toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 40px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    font-size: 14px;
+  }
+  nav.toc li {
+    margin-bottom: 6px;
+    break-inside: avoid;
+  }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.toc a:hover {
+    color: var(--accent);
+  }
+  section {
+    margin-top: 40px;
+    scroll-margin-top: 24px;
+  }
+  h2 {
+    font-size: 19px;
+    font-weight: 650;
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  p {
+    margin: 0 0 14px;
+    font-size: 15px;
+  }
+  ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    font-size: 15px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 16px;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  a {
+    color: var(--accent);
+  }
+  code {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 13px;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer a {
+    color: var(--muted);
+  }
+</style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 28.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Privacy Policy for SmartMoney</b></span></h1>
-<p class="p2"><span class="s1">Last updated: September 3, 2026</span></p>
-<p class="p3"><span class="s1">SmartMoney does not collect, transmit, or share any personal data. All information you enter — transactions, accounts, budgets, bills, and receipt photos — is stored locally on your device using Apple's SwiftData framework, and is shared only with SmartMoney's own Home Screen widget via a private, on-device App Group container.</span></p>
-<p class="p3"><span class="s1">SmartMoney does not use the network. It contains no analytics, no advertising, no tracking technologies, and no third-party SDKs. We do not have servers, and we cannot see, access, or receive your data in any form.</span></p>
-<h2 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Siri &amp; Shortcuts</b></span></h2>
-<p class="p3"><span class="s1">If you use the "Log an expense" Shortcut, the details you speak or type are processed by Apple's on-device Siri/Shortcuts system and passed directly into SmartMoney's local storage — they are not sent to us or to any third party.</span></p>
-<h2 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Data deletion</b></span></h2>
-<p class="p3"><span class="s1">Because all data lives only on your device, deleting the app deletes all associated data. There is no account to close and no server-side copy to request removal of.</span></p>
-<h2 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Children's privacy</b></span></h2>
-<p class="p3"><span class="s1">SmartMoney does not knowingly collect data from anyone, including children, because it does not collect data at all.</span></p>
-<h2 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Changes to this policy</b></span></h2>
-<p class="p3"><span class="s1">If this policy changes, the "Last updated" date above will be revised and the new version posted at this same URL.</span></p>
-<h2 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #efeef5; -webkit-text-stroke: #efeef5"><span class="s1"><b>Contact</b></span></h2>
-<p class="p3"><span class="s1">Questions about this policy can be sent to <a href="mailto:smartmoneytrackerbudget@gmail.com"><span class="s2">smartmoneytrackerbudget@gmail.com</span></a>.</span></p>
+
+<header>
+  <h1>Privacy Policy</h1>
+  <p class="updated">SmartMoney for iOS · Last updated September 3, 2026</p>
+</header>
+
+<div class="summary-card">
+  <span class="dot"></span>
+  <p><strong>In one sentence:</strong> SmartMoney runs entirely on your device, does not connect to the internet, and does not collect, store, or share any of your personal or financial data — anywhere, ever.</p>
+</div>
+
+<nav class="toc" aria-label="Table of contents">
+  <p>On this page</p>
+  <ol>
+    <li><a href="#collect">Information we collect</a></li>
+    <li><a href="#use">How your information is used</a></li>
+    <li><a href="#storage">Where your data lives</a></li>
+    <li><a href="#sharing">Third parties &amp; data sharing</a></li>
+    <li><a href="#siri">Siri &amp; Shortcuts</a></li>
+    <li><a href="#retention">Data retention &amp; deletion</a></li>
+    <li><a href="#rights">Your rights and choices</a></li>
+    <li><a href="#children">Children's privacy</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+    <li><a href="#contact">Contact us</a></li>
+  </ol>
+</nav>
+
+<section id="collect">
+  <h2>1. Information we collect</h2>
+  <p>
+    SmartMoney does not collect any information about you. The app has no
+    network access, no analytics, no advertising identifiers, no crash
+    reporting SDKs, and no account or sign-in of any kind. We — the
+    developer — never receive, see, or have access to anything you enter
+    into the app.
+  </p>
+  <p>
+    Data you choose to enter (transaction amounts, merchants, account
+    balances, budgets, recurring bills, and receipt photos) stays only on
+    your device. It is never transmitted anywhere, including to us.
+  </p>
+</section>
+
+<section id="use">
+  <h2>2. How your information is used</h2>
+  <p>
+    Because nothing is collected or transmitted, there is nothing for us to
+    use, analyze, sell, or share. The data you enter is used solely to power
+    the app's on-device features — for example, calculating your spending
+    totals, budget progress, and net worth — and for nothing else.
+  </p>
+</section>
+
+<section id="storage">
+  <h2>3. Where your data lives</h2>
+  <table>
+    <thead>
+      <tr><th>Storage</th><th>Purpose</th><th>Leaves your device?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Local SwiftData database</td>
+        <td>Transactions, accounts, budgets, recurring bills, receipt photos</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Shared App Group container</td>
+        <td>Lets the SmartMoney Home Screen widget read the same on-device data</td>
+        <td>No — stays within your device's sandbox</td>
+      </tr>
+      <tr>
+        <td>iOS Keychain / UserDefaults</td>
+        <td>App preferences (e.g. currency format)</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    If you use Apple's iCloud device backup, your device's operating system
+    may include this locally-stored data in your personal encrypted iCloud
+    backup — that backup is controlled by you and Apple, not by us. See
+    Apple's own privacy documentation for how iCloud Backup handles your
+    data.
+  </p>
+</section>
+
+<section id="sharing">
+  <h2>4. Third parties &amp; data sharing</h2>
+  <p>
+    SmartMoney does not integrate any third-party SDKs — no analytics, no
+    advertising networks, no crash reporters, no cloud sync services. We do
+    not sell, rent, or share your data with anyone, because we never
+    receive it in the first place.
+  </p>
+</section>
+
+<section id="siri">
+  <h2>5. Siri &amp; Shortcuts</h2>
+  <p>
+    SmartMoney supports logging an expense via Siri and the Shortcuts app.
+    When you use this feature, the details you speak or type are processed
+    on-device by Apple's Siri/Shortcuts system and written directly into
+    SmartMoney's local storage. This voice or text input is not sent to us
+    or to any third party by SmartMoney.
+  </p>
+</section>
+
+<section id="retention">
+  <h2>6. Data retention &amp; deletion</h2>
+  <p>
+    Your data is retained for as long as it exists on your device. Deleting
+    SmartMoney from your device permanently deletes all of its associated
+    data. Since we never receive a copy, there is no server-side data for us
+    to retain, export, or delete on your behalf.
+  </p>
+</section>
+
+<section id="rights">
+  <h2>7. Your rights and choices</h2>
+  <p>
+    Because SmartMoney is offline by design, you already have full control
+    over your data at all times:
+  </p>
+  <ul>
+    <li><strong>Access:</strong> everything you've entered is visible in the app itself, at any time.</li>
+    <li><strong>Correction:</strong> edit or delete any transaction, account, budget, or bill directly in the app.</li>
+    <li><strong>Deletion:</strong> delete individual records in-app, or uninstall the app to erase everything at once.</li>
+    <li><strong>Portability:</strong> use the built-in CSV export to take your transaction data with you.</li>
+  </ul>
+</section>
+
+<section id="children">
+  <h2>8. Children's privacy</h2>
+  <p>
+    SmartMoney does not knowingly collect information from anyone, including
+    children under 13, because it does not collect information from anyone
+    at all. SmartMoney is not directed at children and contains no social
+    features, chat, or user-generated content shared with others.
+  </p>
+</section>
+
+<section id="changes">
+  <h2>9. Changes to this policy</h2>
+  <p>
+    If this policy changes, the "Last updated" date at the top of this page
+    will be revised and the updated policy posted at this same URL. Since
+    the app requires no account, we have no way to notify you directly —
+    please check back here if you'd like to review the current policy.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>10. Contact us</h2>
+  <p>
+    Questions about this privacy policy or the SmartMoney app can be sent
+    to <a href="mailto:smartmoneytrackerbudget@gmail.com">smartmoneytrackerbudget@gmail.com</a>.
+  </p>
+</section>
+
+<footer>
+  <p>SmartMoney is developed and published as a single-developer iOS app. This policy applies only to the SmartMoney app and this website.</p>
+</footer>
+
 </body>
 </html>
