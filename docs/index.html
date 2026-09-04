@@ -37,12 +37,28 @@
     line-height: 1.6;
     max-width: 720px;
     margin: 0 auto;
-    padding: 56px 24px 96px;
+    padding: 24px 24px 96px;
     color: var(--text);
     background: var(--bg);
   }
+  nav.crumbs {
+    display: flex;
+    gap: 18px;
+    padding: 14px 0 24px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  nav.crumbs a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav.crumbs a.active {
+    color: var(--accent);
+  }
   header {
-    margin-bottom: 32px;
+    margin: 32px 0;
   }
   h1 {
     font-size: 30px;
@@ -178,6 +194,11 @@
 </style>
 </head>
 <body>
+
+<nav class="crumbs" aria-label="Site navigation">
+  <a href="./" class="active">Privacy Policy</a>
+  <a href="support.html">Support</a>
+</nav>
 
 <header>
   <h1>Privacy Policy</h1>
@@ -338,7 +359,7 @@
 </section>
 
 <footer>
-  <p>SmartMoney is developed and published as a single-developer iOS app. This policy applies only to the SmartMoney app and this website.</p>
+  <p>SmartMoney is developed and published as a single-developer iOS app. This policy applies only to the SmartMoney app and this website. Need help instead? Visit <a href="support.html">Support</a>.</p>
 </footer>
 
 </body>
